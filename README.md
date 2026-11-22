@@ -2,13 +2,9 @@
 
 Analisis cohort bulanan dan retensi pelanggan sebuah toko online grosir, ditulis dengan SQL (SQLite). Project ini menjawab satu pertanyaan: **berapa persen pelanggan baru yang kembali berbelanja pada bulan-bulan berikutnya, dan apakah cohort yang lebih baru lebih baik daripada yang lama?**
 
-Penulis: Hasta Budiawan
-
 ## Dataset
 
 [Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii) dari UCI Machine Learning Repository: transaksi sebuah toko online asal Inggris dari Desember 2009 sampai Desember 2011 (1.067.371 baris). Cek halaman dataset untuk lisensi dan ketentuannya.
-
-File CSV mentahnya sekitar 95 MB, jadi **tidak disertakan** di repository ini. Unduh dari tautan di atas dan letakkan di folder `data/`.
 
 ## Pertanyaan bisnis
 
@@ -37,22 +33,6 @@ Cohort Desember 2009 dikeluarkan dari rata-rata dan perbandingan, karena berisi 
 - **Musiman**: retensi dipengaruhi bulan kalender, bukan hanya umur cohort. Cohort September sampai November 2010 naik ke 19-26% di bulan ke-12 karena bulan itu jatuh di musim belanja akhir tahun 2011. Kenaikan di bulan ke-12 jangan ditafsirkan sebagai "retensi naik setelah setahun".
 
 Rekomendasi: fokus pada **pembelian kedua dalam 30 hari pertama** (pengingat dan penawaran khusus untuk pelanggan baru, diuji dengan A/B test), dan siapkan pendekatan terpisah untuk pelanggan yang datang di musim ramai akhir tahun.
-
-## Keterbatasan
-
-- Hanya satu retailer di Inggris dengan data dua tahun, jadi hasilnya belum tentu berlaku untuk bisnis lain.
-- Bulan ke-12 ke atas dihitung dari sedikit cohort sehingga kurang stabil.
-- Cohort Desember 2010 kecil (76 pelanggan), jadi angkanya mudah berfluktuasi.
-- "Aktif" berarti melakukan pembelian. Data tidak memuat kunjungan, jadi penyebab pelanggan berhenti tidak bisa dipastikan, dan penjelasan musiman hanya dugaan.
-
-## Cara menjalankan
-
-Membutuhkan [DB Browser for SQLite](https://sqlitebrowser.org/).
-
-1. **File → New Database**, misalnya `cohort_retensi.db`.
-2. **File → Import → Table from CSV file**, pilih `online_retail_II.csv`, centang *Column names in first line*, dan beri nama tabel `online_retail_II`. Lalu **Write Changes** (Ctrl+S).
-3. Buka tab **Execute SQL**, muat `sql/cohort_retensi.sql`, lalu jalankan querynya satu per satu (Shift+F5 menjalankan statement yang sedang dipilih).
-4. Opsional: ekspor tiap hasil dengan *Save the results view → Export to CSV*.
 
 ## Tools
 
