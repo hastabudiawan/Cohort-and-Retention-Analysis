@@ -1,7 +1,5 @@
 # Analisis Cohort dan Retensi
 
-[English](README.md)
-
 Analisis cohort bulanan dan retensi pelanggan sebuah toko online grosir, ditulis dengan SQL (SQLite). Project ini menjawab satu pertanyaan: **berapa persen pelanggan baru yang kembali berbelanja pada bulan-bulan berikutnya, dan apakah cohort yang lebih baru lebih baik daripada yang lama?**
 
 Penulis: Hasta Budiawan
@@ -56,23 +54,6 @@ Membutuhkan [DB Browser for SQLite](https://sqlitebrowser.org/).
 3. Buka tab **Execute SQL**, muat `sql/cohort_retensi.sql`, lalu jalankan querynya satu per satu (Shift+F5 menjalankan statement yang sedang dipilih).
 4. Opsional: ekspor tiap hasil dengan *Save the results view → Export to CSV*.
 
-## Struktur repository
+## Tools
 
-```
-cohort-retention-analysis/
-├── README.md
-├── README.id.md
-├── sql/
-│   └── cohort_retensi.sql
-├── results/
-│   ├── ringkasan_rata-rata_retensi.csv
-│   ├── bulan_cohort.csv
-│   └── retensi_cohort.csv
-└── data/                  (letakkan online_retail_II.csv di sini; tidak di-commit)
-```
-
-Tambahkan `data/` dan file ekspor `transaksi_bersih.csv` yang besar ke `.gitignore`, karena GitHub menolak file di atas 100 MB dan data mentahnya memang tidak untuk didistribusikan ulang di sini.
-
-## Alat
-
-SQL, SQLite, CTE, DB Browser for SQLite
+SQL, SQLite, CTE
